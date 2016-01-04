@@ -9,6 +9,10 @@ FROM debian:8.2
 # File Author
 MAINTAINER Michal Parusinski <mparusinski@gmail.com>
 
+# Other elements
+EXPOSE 8000
+VOLUME ["/data"]
+
 # Update the repository sources list
 RUN apt-get update
 
@@ -17,3 +21,4 @@ RUN apt-get -y install python-pip
 
 # Install pelican and markdown
 RUN pip install pelican markdown
+
