@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo docker run -v $1:/data -i -t my_pelican
+docker run -v $1:/data -p 80:8000 -i -t my_pelican
