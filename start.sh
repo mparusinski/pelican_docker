@@ -2,4 +2,4 @@
 cd /data/
 pelican content
 cd output
-python -m pelican.server &
+python -m pelican.server 
