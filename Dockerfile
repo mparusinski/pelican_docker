@@ -1,5 +1,5 @@
 ############################################################################
-# Dockerfile to build a Pelican setup 
+# Dockerfile to build a Pelican setup
 # Based on Debian stable
 ##############################################################################
 
@@ -22,5 +22,8 @@ RUN apt-get -y install python-pip
 # Install pelican and markdown
 RUN pip install pelican markdown
 
+ADD ./start.sh /start.sh
+RUN chmod 755 /start.sh
+
 # Default run for the pelican image
-ENTRYPOINT cd /data/ && pelican content && cd output && python -m pelican.server
+CMD ["/start.sh"]
